@@ -1,8 +1,6 @@
 # AirDesktop: Sync with AirConnect from AirNote Mobile App
 
-[![Platform](https://img.shields.io/badge/windows-platform?style=for-the-badge&label=platform&labelColor=21262d&color=6e7681)](https://www.windows.com) [![OS](https://img.shields.io/badge/26%2B-level?style=for-the-badge&logo=windows&logoColor=3cd382&label=API&labelColor=21262d&color=ff663b)](https://www.windows.com) [![Release](https://img.shields.io/github/v/release/RRechz/AirDesktop?display_name=tag&style=for-the-badge&logo=github&labelColor=21262d&color=1f6feb)](https://github.com/RRechz/AirDesktop/releases) [![Downloads](https://img.shields.io/github/downloads/RRechz/AirDesktop/total)](https://github.com/RRechz/AirDesktop/releases)
-
-![alt text](banner_link)
+[![Platform](https://img.shields.io/badge/windows-platform?style=for-the-badge&label=platform&labelColor=21262d&color=6e7681)](https://www.windows.com) [![OS](https://img.shields.io/badge/10/11-level?style=for-the-badge&logo=windows&logoColor=3cd382&label=Version&labelColor=21262d&color=ff663b)](https://www.windows.com) [![Release](https://img.shields.io/github/v/release/RRechz/AirDesktop?display_name=tag&style=for-the-badge&logo=github&labelColor=21262d&color=1f6feb)](https://github.com/RRechz/AirDesktop/releases)
 
 **AirDesktop**: The official Windows app for the AirNote mobile app. Connect with AirConnect and sync your notes locally between Mobile and Windows. Write on Windows and view on Android, or vice versa :)
 
