@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirDesktop</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    
+    <style>
+        .EasyMDEContainer { background: white; border-radius: 8px; }
+        .editor-toolbar { border-radius: 8px 8px 0 0; border-color: #ddd; }
+        .CodeMirror { border-radius: 0 0 8px 8px; border-color: #ddd; min-height: 300px; }
+    </style>
+</head>
+<body>
+
+    <header id="title-bar">
+        <div class="brand">
+            <span class="material-icons logo-icon">cloud_sync</span>
+            <h1>AirDesktop<span class="beta-tag">Beta</span></h1>
+        </div>
+        
+        <button id="btnConnection" class="connection-capsule disconnected no-drag">
+            <div class="capsule-icon">
+                <span class="material-icons" id="connIcon">bluetooth_disabled</span>
+            </div>
+            <div class="capsule-info">
+                <span class="device-name" id="deviceName">Cihaz Eşleşmedi</span>
+                <span class="device-status" id="deviceStatus">Bağlanmak için tıkla</span>
+            </div>
+            <div class="battery-indicator hidden" id="batteryIndicator">
+                <span class="battery-level" id="batteryLevel">--%</span>
+                <span class="material-icons battery-icon">battery_full</span>
+            </div>
+        </button>
+
+        <div class="window-controls no-drag">
+            <button id="btnMinimize" class="win-btn" title="Küçült">
+                <span class="material-icons">remove</span>
+            </button>
+            <button id="btnCloseApp" class="win-btn close-btn" title="Kapat">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="noteContainer">
+        <div class="empty-state">
+            <span class="material-icons empty-icon">note_add</span>
+            <p>Notlarınızı görmek için AirNote ile eşleştirin veya yeni bir not oluşturun.</p>
+        </div>
+    </main>
+
+    <div id="kaiChatWindow" class="chat-window">
+        <div class="chat-header">
+            <div class="chat-title">
+                <div class="ai-avatar">
+                    <span class="material-icons">auto_awesome</span>
+                </div>
+                <div>
+                    <h3>Kai AI</h3>
+                    <span class="status-text">Çevrimiçi</span>
+                </div>
+            </div>
+            <button id="btnCloseChat" class="icon-btn-light">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+
+        <div id="chatBody" class="chat-body">
+            <div class="chat-welcome">
+                <div class="ai-avatar-large">
+                    <span class="material-icons">auto_awesome</span>
+                </div>
+                <p>Merhaba! Ben Kai. AirNote ekosistemine hoş geldin.</p>
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <div class="input-wrapper">
+                <textarea id="chatInput" placeholder="Kai'ye bir şey sor..." rows="1"></textarea>
+                <button id="btnSendChat" class="send-btn" disabled>
+                    <span class="material-icons">send</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fab-container">
+        <div id="fabMenu" class="fab-menu">
+            <button id="btnKaiAi" class="menu-item ai-item">
+                <span class="label">Kai AI</span>
+                <div class="icon-box">
+                    <span class="material-icons">auto_awesome</span>
+                </div>
+            </button>
+            
+            <button id="btnNewNote" class="menu-item note-item">
+                <span class="label">Yeni Not</span>
+                <div class="icon-box">
+                    <span class="material-icons">edit</span>
+                </div>
+            </button>
+        </div>
+
+        <div class="split-fab">
+            <button id="btnSearch" class="split-btn search-part" title="Ara">
+                <span class="material-icons">search</span>
+                <span class="search-text">Notlarda ara...</span>
+            </button>
+            <div class="divider"></div>
+            <button id="fabMain" class="split-btn add-part" title="Oluştur">
+                <span class="material-icons" id="fabIcon">add</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="editorModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Yeni Not</h2>
+                <button id="btnCloseModal" class="icon-btn-small">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <input type="text" id="inputTitle" placeholder="Not Başlığı" autocomplete="off">
+                <textarea id="inputContent"></textarea>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btnSaveNote" class="primary-btn full-width">
+                    <span class="material-icons">save</span> Kaydet ve Eşitle
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Mesaj buraya gelecek</div>
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module; 
+            module = undefined;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    
+    <script>
+        if (window.module) module = window.module;
+    </script>
+
+    <script src="./app.js"></script>
+
+</body>
+</html>

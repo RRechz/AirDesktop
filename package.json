@@ -1,0 +1,15 @@
+{
+  "name": "AirDesktop",
+  "version": "1.0.0",
+  "description": "AirNote Windows App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "RRechz",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^34.0.0"
+  }
+}
